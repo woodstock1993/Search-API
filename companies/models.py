@@ -2,7 +2,7 @@ from django.db import models
 
 
 # Create your models here.
-class Company(models.Model):
+class Companies(models.Model):
     id = models.AutoField(primary_key=True)
     company_kr = models.CharField(max_length=128, null=True, blank=True)
     company_en = models.CharField(max_length=128, null=True, blank=True)
@@ -12,7 +12,7 @@ class Company(models.Model):
     tag_ja = models.CharField(max_length=256, null=False, blank=False)
 
     class Meta:
-        app_label = 'companies'
+        ordering = ['-id']
 
     def __str__(self):
-        return self.name
+        return self.company_kr
