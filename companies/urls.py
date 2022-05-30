@@ -4,7 +4,8 @@ from rest_framework import routers
 
 
 router = routers.DefaultRouter()
-router.register('companies', CompanyViewSet)
+router.register(r'companies', CompanyViewSet, basename='companies')
+router.register(r'tag', TagViewSet, basename='tags')
 
 urlpatterns = [
     path('', include(router.urls)),

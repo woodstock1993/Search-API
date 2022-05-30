@@ -25,7 +25,7 @@ schema_view = get_schema_view(
         default_version='v1',
         description=
         """
-        Wanted 5차 과제 api 명세서
+        Wanted 5차 과제 Search api 명세서
         """,
     ),
     validators=['flex'],
@@ -37,6 +37,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('companies.urls')),
 ]
+
 
 urlpatterns += [
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
